@@ -1121,7 +1121,7 @@ atEvery.prototype.seeContent=function(pageNum,option){
             let shuoAvatar = atContent.attributes.avatar;
             shuoAvatar = typeof(shuoAvatar)==="undefined"?"https://cdn.jsdelivr.net/gh/drew233/cdn/logol.png":shuoAvatar;
             let currentUser = AV.User.current();
-            let userName = currentUser.attributes.username;
+            let userName = atContent.attributes.userName;
             let hideIcon = currentUser?'':'style="display: none"';
             //Time process
             let timeForm = atContent.createdAt;
