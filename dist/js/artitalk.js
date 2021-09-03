@@ -896,6 +896,7 @@ atEvery.prototype._init=function(){
         converte.setOption('strikethrough', 1);
         let shuoshuoContentHtml = converte.makeHtml(shuoshuoContent);
         let atAvatar = typeof(currentUser.attributes.img) === "undefined" ? "https://cdn.jsdelivr.net/gh/drew233/cdn/logol.png":currentUser.attributes.img;
+        let userName = currentUser.attributes.username;
         // alert(deFaultavatar);
         let userClient = new Client();
         // console.log("Engine ：" + client.engine.name + " " + client.engine.version);
@@ -905,6 +906,7 @@ atEvery.prototype._init=function(){
         atObject.set('atContentHtml',shuoshuoContentHtml);
         atObject.set('userOs',userOs);
         atObject.set('avatar',atAvatar);
+        atObject.set('userName',userName);
         fadeIn('lazy');
         atObject.save().then(function (res) {
             document.getElementById("ccontent").innerHTML="";
@@ -1363,7 +1365,7 @@ atEvery.prototype.seeContent=function(pageNum,option){
         queryEdit.equalTo('objectId',id);
         queryEdit.find().then(res =>{
             res.forEach(function(atom){
-                let originString = "<ul class=\"cbp_tmtimeline\" id=\"maina\"><li><span class=\"cbp_tmlabel\"><p>" + text38 + "</p><div class=\"shuoshuo_time\"><span class=\"shuoshuo_author_img\"><img src=\"https://cdn.jsdelivr.net/gh/drew233/cdn/logol.png\" class=\"artitalk_avatar gallery-group-img\" width=\"48\" height=\"48\"></span><span style=\"\"> 由Artitalk发表</span><span style=\"float:right;\"><svg t=\"1591350675688\"  viewBox=\"0 0 1025 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"28653\" width=\"10\" height=\"10\" style=\"display: inline\"></svg> 2020-04-10 20:35:25</span></div></span></li></ul>";
+                let originString = "<ul class=\"cbp_tmtimeline\" id=\"maina\"><li><span class=\"cbp_tmlabel\"><div></div><div>" + text38 + "</div><div class=\"shuoshuo_time\"><span class=\"shuoshuo_author_img\"><img src=\"https://cdn.jsdelivr.net/gh/drew233/cdn/logol.png\" class=\"artitalk_avatar gallery-group-img\" width=\"48\" height=\"48\"></span><span style=\"\"> 由Artitalk发表</span><span style=\"float:right;\"><svg t=\"1591350675688\"  viewBox=\"0 0 1025 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"28653\" width=\"10\" height=\"10\" style=\"display: inline\"></svg> 2020-04-10 20:35:25</span></div></span></li></ul>";
                 document.getElementById('ccontent').innerHTML = originString;
                 let changeId = document.getElementById('atSave');
                 changeId.id='atEditsaveButton';
