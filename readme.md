@@ -1,11 +1,21 @@
-# Artitalk.js
+# Artitalk.js For hexo-fluid
 
 ![](https://img.shields.io/github/stars/Drew233/Artitalk)
 ![](https://img.shields.io/npm/dm/artitalk.svg)
 ![](https://img.shields.io/npm/v/artitalk.svg)
 ![](https://img.shields.io/badge/language-JavaScript-red)
 
-### 详细使用教程请移步 [文档](https://artitalk.js.org/)
+大肆魔改了 Artitalk 的 css 使其和 hexo-fluid 主题相适应，参考了 Htalk 的说说风格。
+
+使用 cdn 引用 js 文件即可，`https://cdn.staticaly.com/gh/spaceskynet/Artitalk/master/dist/js/artitalk.min.js`
+
+注意使用时需使用自定义cssUrl: `https://cdn.staticaly.com/gh/spaceskynet/Artitalk/master/dist/css/artitalk.min.css`, css中有部分 fluid 的颜色变量，如要使用到其他地方，请自行修改 css 后使用自己修改的版本。（在 fluid 中也新加了一个颜色变量，为`--talking-bg-color`）
+
+![ex](./ex.png)
+
+具体效果可见[Here](https://spaceskynet.top/talking/)
+
+### 其他的详细使用教程未变，请移步 [原官方文档](https://artitalk.js.org/)
 
 ## 👀 特性
 
