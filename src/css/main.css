@@ -90,6 +90,14 @@ div#artitalk_main {
 #artitalk_main div.shuoshuo_time>div.shuoshuo_info {
 	flex: 1 1 auto;
 }
+#artitalk_main .shuoshuo_author_img {
+	flex-shrink: 0;
+    align-self: center;
+}
+#artitalk_main #shuoshuo_comment{
+	align-self: center;
+}
+
 #artitalk_main .shuoshuo_author_img img {
     border: 1px solid #ddd;
     padding: 1px;
@@ -99,7 +107,7 @@ div#artitalk_main {
     margin-right: 10px;
 }
 @media screen and (max-width: 65.375em) {
-	#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:last-child {
+	#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span: last-child {
 	font-size: 1.2em;
 }
 }
