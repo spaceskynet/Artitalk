@@ -11,11 +11,10 @@ div#artitalk_main {
 }
 #artitalk_main #shuoshuo_content {
 	padding: 10px;
-	/* min-height: 500px;*/
-	
+	display: grid;
 }
-#artitalk_main body.theme-dark .cbp_tmtimeline: : before {
-	background: RGBA(255, 255, 255, 0.06);
+#artitalk_main #ccontent {
+	justify-self: center;
 }
 #artitalk_main ul.cbp_tmtimeline {
 	padding: 0;
@@ -29,25 +28,12 @@ div#artitalk_main {
 }
 #artitalk_main .cbp_tmtimeline>li .cbp_tmtime {
 	display: block;
-	/* width: 29%;*/
-	/* padding-right: 110px;*/
 	max-width: 70px;
 	position: absolute;
 }
 #artitalk_main .cbp_tmtimeline>li .cbp_tmtime span {
 	display: block;
 	text-align: right;
-}
-#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span: first-child {
-	font-size: 0.9em;
-	color: #bdd0db;
-}
-#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span: last-child {
-	font-size: 1.2em;
-	color: #9bcd9b;
-}
-#artitalk_main .cbp_tmtimeline>li: nth-child(odd) .cbp_tmtime span: last-child {
-	color: RGBA(255, 125, 73, 0.75);
 }
 #artitalk_main div.cbp_tmlabel>p {
 	margin-bottom: 0;
@@ -56,61 +42,66 @@ div#artitalk_main {
 	margin-bottom: 0;
 }
 #artitalk_main .cbp_tmtimeline>li .cbp_tmlabel {
-	margin: 0 0 45px 65px;
 	z-index: 1;
-	background: " + color2 + ";
-	color: " + color3 + " ;
-	padding: 0.8em 1.2em 0.4em 1.2em;
-	/* font-size: 1.2em;*/
-	font-weight: 300;
 	line-height: 1.4;
 	position: relative;
-	border-radius: 5px;
+	border-radius: 10px;
 	transition: all 0.3s ease 0s;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 	display: block;
 }
-#artitalk_main .cbp_tmlabel: hover {
+#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel>div:nth-child(2) {
+	background-color: var(--talking-bg-color);
+	padding: 2.5rem;
+	border-radius: 10px 10px 0px 0px;
+}
+
+#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel>div:nth-child(2)>svg {
+	fill: currentColor;
+    color: rgba(156, 163, 175, 1);
+}
+
+#artitalk_main .cbp_tmlabel:hover {
 	/* transform: scale(1.05);*/
 	transform: translateY(-3px);
 	z-index: 1;
 	box-shadow: 0 15px 32px rgba(0,0,0,0.15) ;
 }
-#artitalk_main .cbp_tmtimeline>li: nth-child(odd) .cbp_tmlabel {
-	background: " + color1 + ";
+#artitalk_main .cbp_tmtimeline>li:nth-child(4n+1) .cbp_tmlabel>div.shuoshuo_time {
+	background-image: linear-gradient(to right, #26a69a 0%, #1b82f1 100%);
 }
-#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel: after {
-	right: 100%;
-	border: solid transparent;
-	z-index: -1;
-	content: \" \";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-right-color: " + color2 + ";
-	border-width: 10px;
-	top: 4px;
+#artitalk_main .cbp_tmtimeline>li:nth-child(4n+2) .cbp_tmlabel>div.shuoshuo_time {
+	background-image: linear-gradient(to right, #1b82f1 0%, #5107c7 100%);
 }
-#artitalk_main .cbp_tmtimeline>li: nth-child(odd) .cbp_tmlabel: after {
-	border-right-color: " + color1 + ";
+#artitalk_main .cbp_tmtimeline>li:nth-child(4n+3) .cbp_tmlabel>div.shuoshuo_time {
+	background-image: linear-gradient(to right, #f87171 0%, #a2145f 100%);
 }
-#artitalk_main p.shuoshuo_time {
-	margin-top: 10px;
-	border-top: 1px dashed #fff;
+#artitalk_main .cbp_tmtimeline>li:nth-child(4n) .cbp_tmlabel>div.shuoshuo_time {
+	background-image: linear-gradient(to right, #f59e0b 0%, #d05209 100%);
+}
+#artitalk_main div.shuoshuo_time {
 	padding-top: 5px;
-	font-size: 12px;
+	padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+	border-radius:0px 0px 10px 10px;
+	color: white!important;
+    font-weight: 600;
+	display: flex;
+}
+#artitalk_main div.shuoshuo_time>div.shuoshuo_info {
+	flex: 1 1 auto;
+}
+#artitalk_main .shuoshuo_author_img img {
+    border: 1px solid #ddd;
+    padding: 1px;
+    float: left;
+    border-radius: 64px;
+    transition: all 1s;
+    margin-right: 10px;
 }
 @media screen and (max-width: 65.375em) {
-	#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span: last-child {
+	#artitalk_main .cbp_tmtimeline>li .cbp_tmtime span:last-child {
 	font-size: 1.2em;
 }
-} #artitalk_main .shuoshuo_author_img img {
-	border: 1px solid #ddd;
-	padding: 2px;
-	float: left;
-	border-radius: 64px;
-	transition: all 1s;
 }
 #artitalk_main .artitalk_avatar {
 	border-radius: 100% ;
@@ -122,7 +113,7 @@ div#artitalk_main {
 	transition: transform 0.4s ease-out;
 	-moz-transition: -moz-transform 0.4s ease-out;
 }
-#artitalk_main .artitalk_avatar: hover {
+#artitalk_main .artitalk_avatar:hover {
 	-webkit-transform: rotateZ(360deg);
 	-moz-transform: rotateZ(360deg);
 	-o-transform: rotateZ(360deg);
@@ -153,11 +144,11 @@ div#artitalk_main {
 	color: #999;
 }
 #operare_artitalk .at_button, #artitalk_main .at_button {
-	background-color: " + color1 + ";
+	background-color: var(--talking-bg-color);
 	/* Green*/
 	border: none;
 	margin-left: 5px;
-	color: " + color3 + ";
+	color: var(--post-text-color);
 	padding: 8px 16px;
 	text-align: center;
 	text-decoration: none;
@@ -170,9 +161,10 @@ div#artitalk_main {
 	outline: none;
 	cursor: pointer;
 }
-#operare_artitalk .at_button: hover, #artitalk_main .at_button: hover {
-	background-color: " + color2 + ";
+#operare_artitalk .at_button:hover, #artitalk_main .at_button:hover {
+	background-image: linear-gradient(to right, #2ed8c0 0%, #149a24 100%);
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 8px 16px 0 rgba(0,0,0,0.19);
+	color:white;
 }
 #artitalk_main #article-container ul p {
 	margin: 0 0 1rem;
@@ -326,7 +318,7 @@ div#artitalk_main {
 	transition: all 1s;
 	z-index: 2;
 }
-#artitalk_main .shuoshuoimg: hover {
+#artitalk_main .shuoshuoimg:hover {
 	transform: scale(3.5);
 }
 #artitalk_main .hide, #operare_artitalk .hide {
@@ -368,10 +360,10 @@ div#artitalk_main {
 }
 #artitalk_main .delete_right {
 	cursor: pointer;
-	width: 12px;
-	height: 12px;
-	position: absolute;
-	right: 12px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0px;
 }
 #artitalk_main svg {
 	display: inline;
@@ -409,7 +401,7 @@ div#artitalk_main {
 #artitalk_main #preview>p>.atemoji {
 	display: inline;
 }
-#artitalk_main .shuoshuo_emoji>.atemoji: hover {
+#artitalk_main .shuoshuo_emoji>.atemoji:hover {
 	transform: scale(1.5);
 }
 #artitalk_main div#shuoshuo_emojiswitch {
@@ -427,7 +419,7 @@ div#artitalk_main {
 	text-align: center;
 	line-height: 40px;
 }
-#artitalk_main .shuoshuo_emoji_part: hover {
+#artitalk_main .shuoshuo_emoji_part:hover {
 	background-color: #ccc;
 	color: #fff;
 }
@@ -466,11 +458,12 @@ div#artitalk_main {
 	display: inline;
 	vertical-align: middle;
 }
-#artitalk_main span.cbp_tmlabel>p {
-	overflow: unset;
+#artitalk_main span.cbp_tmlabel>div {
+	overflow: hidden;
 }
 #artitalk_main ul#maina>li {
 	list-style: none;
+    margin-bottom: 4rem;
 }
 #artitalk_main div#artitalk_main {
 	transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
@@ -556,10 +549,10 @@ div#artitalk_main {
 	opacity: 0;
 }
 }
-p.shuoshuo_time>span>a:hover {
+div.shuoshuo_time>span>a:hover {
     color: red;
 }
-p.shuoshuo_time>span>a {
+div.shuoshuo_time>span>a {
     color: blue;
     text-decoration: none;
 }
